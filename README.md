@@ -1,5 +1,5 @@
 # 📰 News
-A React / Node.js / Express news web app making use of the [News API](https://newsapi.org/).
+A (WIP) React / Node.js / Express news web app making use of the [News API](https://newsapi.org/).
 
 ## Setup
 ### Backend
