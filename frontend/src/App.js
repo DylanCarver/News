@@ -1,60 +1,41 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
 import axios from "axios";
+import styled from "styled-components";
+import NavBar from "components/navBar";
+import React, { useState } from "react";
+import NewsItems from "components/newsItems";
 
 axios.defaults.headers.common = {
   "Content-Type": "application/json"
 };
 
+const Wrapper = styled.div`
+  margin: 0 auto;
+  max-width: 1000px;
+`;
+
 function App() {
-  const [users, setUsers] = useState([]);
-  const [input, setInput] = useState([]);
+  const [country, setCountry] = useState("us");
+  const [category, setCategory] = useState("test1");
 
-  const handleFormPost = e => {
-    e.preventDefault();
-    axios({
-      url: "/users",
-      method: "POST",
-      data: {
-        name: input
-      }
-    })
-      .then(res => {
-        //TODO update list
-      })
-      .catch(err => console.error(err));
+  const categoryChangeHandler = e => {
+    const newCategory = e.target.dataset.name;
+    setCategory(newCategory);
   };
 
-  useEffect(() => {
-    axios({
-      url: "/users",
-      method: "GET"
-    })
-      .then(res => {
-        setUsers(res.data);
-      })
-      .catch(err => console.error(err));
-  }, []);
-
-  const changeHandler = e => {
-    setInput(e.target.value);
+  const countryChangeHandler = e => {
+    const country = e.value;
+    setCountry(country);
   };
+
   return (
-    <div className="App" style={{ color: "#fff" }}>
-      <h1>App</h1>
-      <h2>Users:</h2>
-      {users &&
-        users.map(user => {
-          return <p key={user.id}>{user.username}</p>;
-        })}
-      {!users.length && <p>There are no users.</p>}
-
-      <h2>New User:</h2>
-      <form>
-        <input value={input} onChange={changeHandler} name="name" type="text" />
-        <input onClick={handleFormPost} type="submit" />
-      </form>
-    </div>
+    <Wrapper>
+      <NavBar
+        category={category}
+        categoryChangeHandler={categoryChangeHandler}
+        countryChangeHandler={countryChangeHandler}
+      />
+      <NewsItems category={category} country={country} />
+    </Wrapper>
   );
 }
 
