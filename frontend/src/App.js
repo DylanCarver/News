@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 
 function App() {
   const [country, setCountry] = useState("us");
-  const [category, setCategory] = useState("test1");
+  const [category, setCategory] = useState("");
 
   const categoryChangeHandler = e => {
     const newCategory = e.target.dataset.name;
