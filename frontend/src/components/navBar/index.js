@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import CountrySelector from "components/countrySelector";
 
+import MenuItems from "./menuItems";
+
 const Header = styled.div`
   display: flex;
   margin: 10px 10px;
@@ -23,39 +25,13 @@ const Menu = styled.div`
   margin-left: 15px;
 `;
 
-const Item = styled.a`
-  cursor: pointer;
-  margin-left: 15px;
-  color: ${props => (props.active ? "blue" : "black")};
-`;
-
 const NavBar = props => {
   return (
     <Header>
       <Content>
         <Title>News</Title>
         <Menu>
-          <Item
-            data-name=""
-            onClick={props.categoryChangeHandler}
-            active={props.category === ""}
-          >
-            All
-          </Item>
-          <Item
-            data-name="technology"
-            onClick={props.categoryChangeHandler}
-            active={props.category === "technology"}
-          >
-            Technology
-          </Item>
-          <Item
-            data-name="business"
-            onClick={props.categoryChangeHandler}
-            active={props.category === "business"}
-          >
-            Business
-          </Item>
+          <MenuItems {...props} />
         </Menu>
       </Content>
       <CountrySelector onChange={props.countryChangeHandler} />
