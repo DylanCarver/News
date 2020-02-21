@@ -5,7 +5,8 @@ const CountrySelector = props => {
   const styles = {
     container: base => ({
       ...base,
-      width: 150
+      width: 100,
+      margin: "2px 25px"
     })
   };
   const options = [

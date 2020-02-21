@@ -1,8 +1,12 @@
 import axios from "axios";
+import FadeIn from "react-fade-in";
+import styled from "styled-components";
 import Article from "components/article";
 import React, { useState, useEffect } from "react";
 
-import FadeIn from "react-fade-in";
+const Wrapper = styled.div`
+  min-height: 120vh;
+`;
 
 const NewsItems = props => {
   const [news, setNews] = useState([]);
@@ -24,7 +28,7 @@ const NewsItems = props => {
   }, [props.country, props.category]);
 
   return (
-    <>
+    <Wrapper>
       {news && (
         <FadeIn>
           {news.map(article => {
@@ -41,7 +45,7 @@ const NewsItems = props => {
           })}
         </FadeIn>
       )}
-    </>
+    </Wrapper>
   );
 };
 

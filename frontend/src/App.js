@@ -1,6 +1,7 @@
 import axios from "axios";
 import styled from "styled-components";
 import NavBar from "components/navBar";
+import Footer from "components/footer";
 import React, { useState } from "react";
 import NewsItems from "components/newsItems";
 
@@ -28,14 +29,17 @@ function App() {
   };
 
   return (
-    <Wrapper>
+    <>
       <NavBar
         category={category}
         categoryChangeHandler={categoryChangeHandler}
         countryChangeHandler={countryChangeHandler}
       />
-      <NewsItems category={category} country={country} />
-    </Wrapper>
+      <Wrapper>
+        <NewsItems category={category} country={country} />
+      </Wrapper>
+      <Footer />
+    </>
   );
 }
 

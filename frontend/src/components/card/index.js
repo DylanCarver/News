@@ -7,6 +7,7 @@ const Card = styled.a`
   overflow: hidden;
   transition: 0.3s;
   border-radius: 5px;
+  background-color: #fff;
   text-decoration: none;
   margin: 0 10px 15px 10px;
   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);

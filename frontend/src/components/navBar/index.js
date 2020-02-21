@@ -4,10 +4,15 @@ import CountrySelector from "components/countrySelector";
 
 import MenuItems from "./menuItems";
 
-const Header = styled.div`
+const Bar = styled.div`
+  z-index: 2;
+  width: 100%;
+  padding: 10px;
   display: flex;
-  margin: 10px 10px;
+  position: fixed;
+  background-color: #fff;
   justify-content: space-between;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.03);
 `;
 
 const Content = styled.div`
@@ -25,17 +30,24 @@ const Menu = styled.div`
   margin-left: 15px;
 `;
 
+const Spacer = styled.div`
+  height: 90px;
+`;
+
 const NavBar = props => {
   return (
-    <Header>
-      <Content>
-        <Title>News</Title>
-        <Menu>
-          <MenuItems {...props} />
-        </Menu>
-      </Content>
-      <CountrySelector onChange={props.countryChangeHandler} />
-    </Header>
+    <>
+      <Bar>
+        <Content>
+          <Title>News</Title>
+          <Menu>
+            <MenuItems {...props} />
+          </Menu>
+        </Content>
+        <CountrySelector onChange={props.countryChangeHandler} />
+      </Bar>
+      <Spacer />
+    </>
   );
 };
 
