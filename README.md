@@ -7,8 +7,8 @@ A (WIP) React / Node.js / Express news web app making use of the [News API](http
 ### Backend
 
 - `cd backend` from root directory
-- make a `.env` file and copy the contents from `.env.example`
-- add your [News API key](https://newsapi.org/) to the `.env` file
+- make a .env file and copy the contents from .env.example
+- add your [News API key](https://newsapi.org/) to the .env file
 - install dependencies with `yarn`
 - run `yarn start`
 
