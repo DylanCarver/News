@@ -12,7 +12,7 @@ const Title = styled.h3`
 const Article = props => {
   const { url, image, title, description } = props;
   return (
-    <Card target="_blank" href={url}>
+    <Card rel="noopener" target="_blank" href={url}>
       {image && <Image src={image} />}
       <Content margin={image}>
         <Title className="title" marginBottom={description}>

@@ -1,18 +1,15 @@
 import axios from "axios";
 import FadeIn from "react-fade-in";
-import styled from "styled-components";
 import Article from "components/article";
 import React, { useState, useEffect } from "react";
 
-const Wrapper = styled.div`
-  min-height: 120vh;
-`;
+import Loader from "./loader";
 
 const NewsItems = props => {
-  const [news, setNews] = useState([]);
+  const [news, setNews] = useState();
 
   function fetchNews() {
-    setNews("");
+    setNews();
     axios({
       url: `/news?country=${props.country}&category=${props.category}`,
       method: "GET"
@@ -28,8 +25,8 @@ const NewsItems = props => {
   }, [props.country, props.category]);
 
   return (
-    <Wrapper>
-      {news && (
+    <>
+      {news ? (
         <FadeIn>
           {news.map(article => {
             const { url, title, urlToImage, description } = article;
@@ -44,8 +41,10 @@ const NewsItems = props => {
             );
           })}
         </FadeIn>
+      ) : (
+        <Loader count={20} />
       )}
-    </Wrapper>
+    </>
   );
 };
 

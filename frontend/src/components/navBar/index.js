@@ -22,6 +22,7 @@ const Content = styled.div`
 
 const Title = styled.h1`
   margin: 0;
+  user-select: none;
 `;
 
 const Menu = styled.div`

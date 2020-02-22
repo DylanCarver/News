@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   display: flex;
   height: 200px;
+  user-select: none;
   margin-top: -100px;
   padding-top: 100px;
   align-items: center;
