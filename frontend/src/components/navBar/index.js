@@ -40,7 +40,7 @@ const NavBar = props => {
     <>
       <Bar>
         <Content>
-          <Title>News</Title>
+          <Title>📰 News</Title>
           <Menu>
             <MenuItems {...props} />
           </Menu>
