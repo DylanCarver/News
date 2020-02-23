@@ -30,7 +30,6 @@ function App() {
 
   return (
     <>
-      {console.log("test")}
       <NavBar
         category={category}
         categoryChangeHandler={categoryChangeHandler}
