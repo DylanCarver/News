@@ -1,0 +1,14 @@
+{
+  "name": "news-reader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DylanCarver/News.git",
+  "author": "Dylan <dylc2770@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail \"cd backend && yarn start\" \"cd frontend && yarn start\""
+  },
+  "dependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
