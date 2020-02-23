@@ -6,7 +6,8 @@
   "author": "Dylan <dylc2770@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently --kill-others-on-fail \"cd backend && yarn start\" \"cd frontend && yarn start\""
+    "start": "concurrently --kill-others-on-fail \"cd backend && yarn start\" \"cd frontend && yarn start\"",
+    "build": "concurrently --kill-others-on-fail \"cd backend && yarn start\" \"cd frontend && yarn build\""
   },
   "dependencies": {
     "concurrently": "^5.1.0"
