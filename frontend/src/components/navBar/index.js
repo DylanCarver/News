@@ -40,7 +40,12 @@ const NavBar = props => {
     <>
       <Bar>
         <Content>
-          <Title>📰 News</Title>
+          <Title>
+            <span role="img" aria-label="newspaper">
+              📰
+            </span>{" "}
+            News
+          </Title>
           <Menu>
             <MenuItems {...props} />
           </Menu>
