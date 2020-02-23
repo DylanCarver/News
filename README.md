@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c36a8dad-7a68-4375-bdb7-042d163ad535/deploy-status)](https://app.netlify.com/sites/news-reader-demo/deploys)
 # 📰 News Reader
 
 A (WIP) React / Node.js / Express news web app making use of the [News API](https://newsapi.org/).
